@@ -24,10 +24,16 @@ let data = {
     'you are forced to wear sketchers for the rest of your life',
     'you make coffee at home by mixing water and dirt in a bowl'
 ],
-  set badAddOn(newElm){ (this._badAddOn).push(newElm); console.log('Element added! The new array is: ' + this._badAddOn) },
-set goodAddOn(newElm){ (this._goodAddOn).push(newElm); console.log('Element added! The new array is: ' + this._goodAddOn) },
-set goodGrade(newElm){ (this._goodGrade).push(newElm); console.log('Element added! The new array is: ' + this._goodGrade) },
-  set badGrade(newElm){ (this._badGrade).push(newElm); console.log('Element added! The new array is: ' + this._badGrade) },
+checkInputStyle(string){
+    let stringArr = string.split('');
+    if (stringArr[0] === ' '){return false}
+    else if(stringArr[stringArr.length - 1 ] === ' '){return false}
+    else {return true}
+},
+set badAddOn(newElm){ (this._badAddOn).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._badAddOn) } else {console.log('Invalid entry, please check for README.md for help.')}},
+set goodAddOn(newElm){ (this._goodAddOn).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._goodAddOn)} else {console.log('Invalid entry, please check for README.md for help.')} },
+set goodGrade(newElm){ (this._goodGrade).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._goodGrade)} else {console.log('Invalid entry, please check for README.md for help.')} },
+set badGrade(newElm){ (this._badGrade).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._badGrade) } else {console.log('Invalid entry, please check for README.md for help.')}},
 get badAddOn(){ return Math.floor(Math.random() * (this._badAddOn).length)},
 get goodAddOn(){ return Math.floor(Math.random() * (this._goodAddOn).length)},
 get goodGrade(){ return Math.floor(Math.random() * (this._goodGrade).length)},
