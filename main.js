@@ -1,5 +1,10 @@
 // Bhasvic Chronicles
 
+// create a function which takes an argument of the length of an array and generates rand index
+const getRandIndex = (arrIn) => {
+    return Math.floor(Math.random()* (arrIn.length))
+};
+
 //write an array for each of the 3 data sets: grade, action, consequence. Use nested arrays for those with diffrent outcomes
 let gradesArr = ['A*', 'A' , 'B', 'C','D','E'];
 let data = {
@@ -34,18 +39,12 @@ set badAddOn(newElm){ (this._badAddOn).push(newElm); if(this.checkInputStyle(new
 set goodAddOn(newElm){ (this._goodAddOn).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._goodAddOn)} else {console.log('Invalid entry, please check for README.md for help.')} },
 set goodGrade(newElm){ (this._goodGrade).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._goodGrade)} else {console.log('Invalid entry, please check for README.md for help.')} },
 set badGrade(newElm){ (this._badGrade).push(newElm); if(this.checkInputStyle(newElm)){console.log('Element added! The new array is: ' + this._badGrade) } else {console.log('Invalid entry, please check for README.md for help.')}},
-get badAddOn(){ return (this._badAddOn)[Math.floor(Math.random() * (this._badAddOn).length)]},
-get goodAddOn(){ return (this._goodAddOn)[Math.floor(Math.random() * (this._goodAddOn).length)]},
-get goodGrade(){ return (this._goodGrade)[Math.floor(Math.random() * (this._goodGrade).length)]},
-get badGrade(){ return (this._badGrade)[Math.floor(Math.random() * (this._badGrade).length)]},
+get badAddOn(){ return (this._badAddOn)[getRandIndex(this._badAddOn)]},
+get goodAddOn(){ return (this._goodAddOn)[getRandIndex(this._goodAddOn)]},
+get goodGrade(){ return (this._goodGrade)[getRandIndex(this._goodGrade)]},
+get badGrade(){ return (this._badGrade)[getRandIndex(this._badGrade)]}
 }
-// create a function which takes an argument of the length of an array and generates rand index
-const findIndexLength = inArr => {
-    return inArr.length
-};
-const getRandIndex = (arrIn) => {
-    return Math.floor(Math.random()* findIndexLength(arrIn))
-};
+
 // Create a fucntion that when called will return the random sentence
 const runProgram = () => {
    let gradeIndex = getRandIndex(gradesArr);
