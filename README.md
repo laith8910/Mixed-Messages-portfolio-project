@@ -15,5 +15,15 @@ This program is written in JavaScript so it is reccomended to run the program on
 Each run of the program will generate a new message with the default library of answers- however there is built in functionaility to add more messages.
 
 ### Adding more to the data library
-You will need to run main.js inside of a REPL terminal for the most ease, if not this can be done in any code editor. 
-- The middle part of the message is bought from the 
+You will can add new scenarios to the 'data' object isnide of the main.js file. In order to this you will need to know which property to change and how the corresponds with the output sentence:
+- The middle part of the message is bought from the either goodGrade of badGrade array
+- The end part of the sentene is bought from either the badAddOn or goodAddOn array
+- *The 'good' and 'bad' types of arrays are called depending on what randomised grade is given*
+
+Sentences can be added to the array by just changing the relevant array of the data object, like this: 
+```javascript 
+data.goodGrade = 'you have achieved a knighthood for your amazing grades';
+```
+This will automatically push your sentence to the array and then log the rest of the items of the array in the console. If your sentence has spaces at the beginning or end it will not push the sentence and log that there was an error in the console.
+
+It shown be known that calling the arrays  inside of this object will return a random element inside of those arrays.
