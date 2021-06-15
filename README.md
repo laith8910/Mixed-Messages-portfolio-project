@@ -1,5 +1,5 @@
-# The Bhasvic chronicles
-* This project has been completed as part of a full- stack development course at Codecademy *
+# Mixed Messages Project
+*This project has been completed as part of a full- stack development course at Codecademy*
 
 ## Introduction
 The aim of this project is to return a truly random message to the user, in this scenario that message is the outcome of achieving a paticular grade in an exam. The grade and outcomes are randomised, but higher grades achieve better outcomes.
@@ -27,3 +27,6 @@ data.goodGrade = 'you have achieved a knighthood for your amazing grades';
 This will automatically push your sentence to the array and then log the rest of the items of the array in the console. If your sentence has spaces at the beginning or end it will not push the sentence and log that there was an error in the console.
 
 It shown be known that calling the arrays  inside of this object will return a random element inside of those arrays.
+
+## Project Status
+**This project is complete!**
