@@ -23,7 +23,15 @@ let data = {
     'the car you drive is a used moped with 2 extra wheels you glued on',
     'you are forced to wear sketchers for the rest of your life',
     'you make coffee at home by mixing water and dirt in a bowl'
-]
+],
+  set badAddOn(newElm){ (this._badAddOn).push(newElm); console.log('Element added! The new array is: ' + this._badAddOn) },
+set goodAddOn(newElm){ (this._goodAddOn).push(newElm); console.log('Element added! The new array is: ' + this._goodAddOn) },
+set goodGrade(newElm){ (this._goodGrade).push(newElm); console.log('Element added! The new array is: ' + this._goodGrade) },
+  set badGrade(newElm){ (this._badGrade).push(newElm); console.log('Element added! The new array is: ' + this._badGrade) },
+get badAddOn(){ return Math.floor(Math.random() * (this._badAddOn).length)},
+get goodAddOn(){ return Math.floor(Math.random() * (this._goodAddOn).length)},
+get goodGrade(){ return Math.floor(Math.random() * (this._goodGrade).length)},
+get badGrade(){ return Math.floor(Math.random() * (this._badGrade).length)},
 }
 // create a function which takes an argument of the length of an array and generates rand index
 const findIndexLength = inArr => {
